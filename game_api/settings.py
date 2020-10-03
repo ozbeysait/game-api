@@ -40,13 +40,13 @@ INSTALLED_APPS = [
     'authapp',
     'rest_framework',
     'rest_framework.authtoken',
-    'djoser',
+    'djoser', #login, register ve token alma işlemlerini arka planda gerçekleştirecek uygulama
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':(
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.BasicAuthentication',    # Web arayüzünden kontroller yaparken yardımcı olması açısından 
+        #'rest_framework.authentication.SessionAuthentication',  # kullanıdığımız bu authenticationlara gerek olmadığı için kaldırıyoruz
         'rest_framework.authentication.TokenAuthentication',
     ),
     'DEFAULT_PERMISSIONS_CLASSES':(
@@ -121,8 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'Europe/Istanbul'
-
-DATETIME_FORMAT= '%d/%m/%Y %H:%M',
 
 USE_I18N = True
 

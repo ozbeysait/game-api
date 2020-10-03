@@ -6,8 +6,10 @@ from authapp.api.views import *
 app_name="authapp"
 
 urlpatterns = [
-    path('',include('djoser.urls')),
+    # djoser uygulaması ile login, register user ve get token işlemlerini sağlayacak url yönlendirmeleri
+    path('',include('djoser.urls')), 
     path('',include('djoser.urls.authtoken')),
+    ###
     path('games/',GameAPI.as_view(),name='games'),
     path('add-to-cart/',AddToCartAPI.as_view(),name='add-to-cart'),
     path('my-cart/',CartAPI.as_view(),name='my-cart'),
